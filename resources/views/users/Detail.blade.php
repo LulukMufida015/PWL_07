@@ -15,7 +15,7 @@
                     <li class="list-groupitem"><b>No_Handphone: </b>{{$Mahasiswa->No_Handphone}}</li>
                     </ul>
                 </div>
-                <a class="btn btn-success mt-3" href="{{ route('mahasiswa.index') }}">Kembali</a>
+                <a class="btn btn-success mt-3" href="{{ route('mahasiswas.index') }}">Kembali</a>
             </div>
         </div>
     </div>
