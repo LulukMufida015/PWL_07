@@ -13,8 +13,12 @@ class CreateMahasiswasTable extends Migration
      */
     public function up()
     {
-        Schema::create('mahasiswas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('mahasiswa', function (Blueprint $table) {
+            $table->string('nim', 10)->primary();
+            $table->string('nama', 50)->nullabel();
+            $table->string('kelas', 10)->nullabel();
+            $table->string('jurusan', 30)->nullabel();
+            $table->string('no_handphone', 15)->nullabel();
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateMahasiswasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mahasiswas');
+        Schema::dropIfExists('mahasiswa');
     }
 }
