@@ -15,7 +15,7 @@ class UpdateTableMahasiswa extends Migration
     {
         Schema::table('mahasiswa', function (Blueprint $table) {
             $table->string('email', 50)->after('nama')->unique()->nullable();
-            $table->string('tanggal_lahir')->nullable();
+            $table->date('tanggal_lahir')->nullable();
         });
     }
 
