@@ -120,4 +120,17 @@ class MahasiswaController extends Controller
         return redirect()->route('mahasiswa.index')
         -> with('success', 'Mahasiswa Berhasil Dihapus');
     }
+    public function search(Request $request){
+        $keyword = $request->keyword;
+        $mahasiswa = Mahasiswa::where('Nim', 'like', '%' .$keyword. '%')
+        ->orWhere('Nama', 'like', '%' .$keyword. '%')
+        ->orWhere('Kelas', 'like', '%' .$keyword. '%')
+        ->orWhere('Jurusan', 'like', '%' .$keyword. '%')
+        ->orWhere('No_Handphone', 'like', '%' .$keyword. '%')
+        ->orWhere('Email', 'like', '%' .$keyword. '%')
+        ->orWhere('Tanggal_Lahir', 'like', '%' .$keyword. '%')
+        ->paginate(5);
+        $mahasiswa->appends(['keyword' => $keyword]);
+        return view('mahasiswa.index', compact('mahasiswa'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }
