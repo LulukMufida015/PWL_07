@@ -36,11 +36,11 @@
             <th>Tanggal lahir</th>
             <th width="280px">Action</th>
             </tr>
-            @foreach ($mahasiswa as $mhs)
+            @foreach ($page as $mhs)
                 <tr>
                     <td>{{ $mhs->nim }}</td>
                     <td>{{ $mhs->nama }}</td>
-                    <td>{{ $mhs->kelas }}</td>
+                    <td>{{ $mhs->kelas->nama_kelas}}</td>
                     <td>{{ $mhs->jurusan }}</td>
                     <td>{{ $mhs->no_handphone }}</td>
                     <td>{{ $mhs->email }}</td>
@@ -57,5 +57,5 @@
                 </tr>
             @endforeach
         </table>
-        {{ $mahasiswa->links() }}
+        {{ $page->links() }}
 @endsection
