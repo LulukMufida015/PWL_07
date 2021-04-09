@@ -30,8 +30,8 @@
                     <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" >
                 </div>
                 <div class="form-group"> 
-                    <label for="Kelas">Kelas</label>
-                    <select class="form-control">
+                    <label for="kelas">Kelas</label>
+                    <select class="form-control" name="Kelas_Id">
                         @foreach($kelas as $kls)
                         <option value="{{$kls->id}}">{{$kls->nama_kelas}}</option>
                         @endforeach
