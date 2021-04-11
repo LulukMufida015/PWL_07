@@ -6,7 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\Mahasiswa as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Model; //Model Eloquent
+use Illuminate\Database\Eloquent\Model; //Model Eloquentuse
+use App\Models\Kelas;
 
 class Mahasiswa extends Model
 {
